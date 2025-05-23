@@ -32,6 +32,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Use NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - name: Install
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v2
         with:
