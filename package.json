@@ -1,0 +1,48 @@
+{
+	"name": "leptos-snippets",
+	"displayName": "Leptos Snippets",
+	"version": "0.0.1",
+	"description": "Snippets for Leptos, a Rust framework for building web applications.",
+	"categories": [
+		"Snippets"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/simple-icons/simple-icons.git"
+	},
+	"publisher": "mondeja",
+	"type": "module",
+	"scripts": {
+		"format": "npm run format:prettier && npm run format:eslint && npm run format:markdownlint",
+		"format:eslint": "eslint . --fix",
+		"format:markdownlint": "markdownlint-cli2 . --fix",
+		"format:prettier": "prettier --write .",
+		"lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:markdownlint",
+		"lint:eslint": "eslint .",
+		"lint:markdownlint": "markdownlint-cli2 .",
+		"lint:prettier": "prettier --check .",
+		"prepare": "husky",
+		"vscode:prepublish": "npm run lint"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": "rust",
+				"path": "./snippets.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"@stylistic/eslint-plugin": "4.2.0",
+		"@vscode/vsce": "3.4.2",
+		"eslint": "9.27.0",
+		"husky": "9.1.7",
+		"markdownlint-cli2": "0.18.1",
+		"prettier": "3.5.3",
+		"prettier-plugin-packagejson": "2.5.14",
+		"typescript-eslint": "8.32.1"
+	},
+	"engines": {
+		"vscode": "^1.28.0"
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"Leptos component": {
+		"scope": "rust",
+		"prefix": ["#[component]"],
+		"description": "Create a new Leptos component",
+		"body": [
+			"/// ${2:Documentation for [`$1`]}",
+			"#[component]",
+			"pub fn ${1:}() -> impl IntoView {",
+			"    ${0:}",
+			"    ",
+			"    view! {",
+			"        ${3:}",
+			"    }",
+			"}"
+		]
+	}
+}

@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v*
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - name: Install
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Lint
+        run: npm run lint
+
+  vscode:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: lint
+    name: Publish VSCode extension
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v2
+        with:
+          pat: ${{ secrets.VSCODE_ACCESS_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
+
+  release:
+    name: Release
+    needs: vscode
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get tag metadata
+        id: tag
+        run: |
+          TAG_TITLE=${GITHUB_REF#refs/*/}
+          echo "title=$TAG_TITLE" >> $GITHUB_OUTPUT
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: ${{ steps.tag.outputs.title }}
+          tag_name: ${{ steps.tag.outputs.title }}
+          body: |
+            See [CHANGELOG](https://github.com/mondeja/vscode-leptos-snippets/blob/master/CHANGELOG.md)
+          draft: false
+          prerelease: false
