@@ -9,3 +9,8 @@
 ## Useful resources
 
 - [Snippet Guide](https://code.visualstudio.com/api/language-extensions/snippet-guide)
+
+## Commands
+
+- Convert AVI file to 15 fps GIF for examples:
+  `ffmpeg -t 10.5 -i input.avi -vf "fps=15" -loop 0 output.gif`
