@@ -17,13 +17,15 @@ ext install mondeja.leptos-snippets
 
 ### `#[component]` expansion
 
-1. Starting typing `comp` in a Rust file and you should see the snippet
+1. Start typing `comp` in a Rust file and you should see the snippet
    `#[component] Leptos component`. Press <kbd>Enter</kbd> to insert it.
 1. Write the name of the component and press <kbd>Tab</kbd>.
-1. Write the documentation of the component and press <kbd>Tab</kbd>.
+1. Write its documentation and press <kbd>Tab</kbd>.
 1. Write the `view!` body and press <kbd>Tab</kbd>.
-1. Write the code of the component and press <kbd>Tab</kbd>.
+1. Write its code and press <kbd>Tab</kbd>.
 
-![`#[component]` expansion](https://raw.githubusercontent.com/mondeja/vscode-leptos-snippets/master/assets/component.gif)
+<p align="center">
+  <img alt ="#[component] expansion" src="https://raw.githubusercontent.com/mondeja/vscode-leptos-snippets/master/assets/component.gif">
+</p>
 
 [Leptos]: https://leptos.dev
