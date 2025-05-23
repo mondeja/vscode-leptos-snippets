@@ -8,9 +8,27 @@
 			"#[component]",
 			"pub fn ${1:}() -> impl IntoView {",
 			"    ${0:}",
-			"    ",
+			"",
 			"    view! {",
 			"        ${3:}",
+			"    }",
+			"}"
+		]
+	},
+	"Leptos server function": {
+		"scope": "rust",
+		"prefix": ["#[server]"],
+		"description": "Create a new Leptos server function",
+		"body": [
+			"/// ${2:Documentation for [`$1`]}",
+			"#[server]",
+			"pub async fn ${1:}(param: String) -> Result<(), ServerFnError> {",
+			"    ${0:}",
+			"",
+			"    match ${3:}",
+			"    {",
+			"        Ok(_) => Ok(()),",
+			"        Err(e) => Err(ServerFnError::ServerError(e.to_string())),",
 			"    }",
 			"}"
 		]
