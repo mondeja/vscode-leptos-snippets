@@ -1,15 +1,22 @@
 {
 	"name": "leptos-snippets",
 	"displayName": "Leptos Snippets",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Snippets for Leptos, a Rust framework for building web applications.",
 	"categories": [
 		"Snippets"
 	],
+	"keywords": [
+		"leptos",
+		"rust",
+		"snippets",
+		"vscode"
+	],
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/simple-icons/simple-icons.git"
+		"url": "git+ssh://git@github.com/mondeja/vscode-leptos-snippets.git"
 	},
+	"qna": "https://github.com/mondeja/vscode-leptos-snippets/discussions/categories/q-a",
 	"publisher": "mondeja",
 	"type": "module",
 	"scripts": {
@@ -45,5 +52,10 @@
 	},
 	"engines": {
 		"vscode": "^1.28.0"
+	},
+	"icon": "assets/leptos-logo.png",
+	"galleryBanner": {
+		"color": "#EF3B39",
+		"theme": "dark"
 	}
 }
