@@ -53,9 +53,5 @@
 	"engines": {
 		"vscode": "^1.28.0"
 	},
-	"icon": "assets/leptos-logo.png",
-	"galleryBanner": {
-		"color": "#EF3B39",
-		"theme": "dark"
-	}
+	"icon": "assets/leptos-logo.png"
 }
