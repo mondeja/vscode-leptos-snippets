@@ -21,6 +21,7 @@
 		"lint:eslint": "eslint .",
 		"lint:markdownlint": "markdownlint-cli2 .",
 		"lint:prettier": "prettier --check .",
+		"pack": "vsce package",
 		"prepare": "husky",
 		"vscode:prepublish": "npm run lint"
 	},
