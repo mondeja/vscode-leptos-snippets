@@ -48,12 +48,51 @@ ext install mondeja.leptos-snippets
 
 Import the Leptos prelude. Expands to `use leptos::prelude::*;`.
 
+### `App`
+
+Expands to a basic Leptos `App` component. It only includes the component structure,
+not the imports. For imports, see [`use App`](#use-app) below.
+
+```rust
+#[component]
+pub fn App() -> impl IntoView {
+    provide_meta_context();
+
+    view! {
+        <Title text="Welcome to Leptos"/>
+
+        <Router>
+            <main>
+                <Routes fallback=|| "Page not found.".into_view()>
+                    <Route path=StaticSegment("") view=HomePage/>
+                </Routes>
+            </main>
+        </Router>
+    }
+}
+```
+
+### `use App`
+
+Expands to the necessary imports for using the [`App`](#app) code snippet.
+
+```rust
+use leptos::prelude::*;
+use leptos_meta::{provide_meta_context, Title};
+use leptos_router::{
+    components::{Route, Router, Routes},
+    StaticSegment,
+};
+```
+
 ### `shell()`
 
-Generates a basic Leptos `shell` function. Expands to
+Expands to a basic Leptos `shell` function.
 
 ```rust
 pub fn shell(options: LeptosOptions) -> impl IntoView {
+    use leptos_meta::MetaTags;
+
     view! {
         <!DOCTYPE html>
         <html lang="en">
@@ -70,6 +109,33 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
         </html>
     }
 }
+```
+
+### `Router`
+
+Expands to a basic Leptos `Router` setup. It includes only a simple router
+structure, not including the imports. For imports, see [`use Router`](#use-router)
+below.
+
+```rust
+<Router>
+    <main>
+        <Routes fallback=|| "Page not found.".into_view()>
+            <Route path=StaticSegment("") view=HomePage/>
+        </Routes>
+    </main>
+</Router>
+```
+
+### `use Router`
+
+Expands to the necessary imports for using the [`Router`](#router) code snippet.
+
+```rust
+use leptos_router::{
+    components::{Route, Router, Routes},
+    StaticSegment,
+};
 ```
 
 [Leptos]: https://leptos.dev

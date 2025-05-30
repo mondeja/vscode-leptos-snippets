@@ -39,12 +39,50 @@
 		"description": "Import Leptos prelude.",
 		"body": ["use leptos::prelude::*;"]
 	},
+	"Leptos App": {
+		"scope": "rust",
+		"prefix": ["App"],
+		"description": "Create a basic Leptos App component.",
+		"body": [
+			"#[component]",
+			"pub fn App() -> impl IntoView {",
+			"    provide_meta_context();",
+			"",
+			"    view! {",
+			"        <Title text=\"Welcome to Leptos\"/>",
+			"",
+			"        <Router>",
+			"            <main>",
+			"                <Routes fallback=|| \"Page not found.\".into_view()>",
+			"                    <Route path=StaticSegment(\"\") view=HomePage/>",
+			"                </Routes>",
+			"            </main>",
+			"        </Router>",
+			"    }",
+			"}"
+		]
+	},
+	"Leptos use App": {
+		"scope": "rust",
+		"prefix": ["use App"],
+		"description": "Add imports for a basic Leptos App component.",
+		"body": [
+			"use leptos::prelude::*;",
+			"use leptos_meta::{provide_meta_context, Title};",
+			"use leptos_router::{",
+			"    components::{Route, Router, Routes},",
+			"    StaticSegment,",
+			"};"
+		]
+	},
 	"Leptos shell": {
 		"scope": "rust",
 		"prefix": ["shell()"],
 		"description": "Create a Leptos shell.",
 		"body": [
 			"pub fn shell(options: LeptosOptions) -> impl IntoView {",
+			"    use leptos_meta::MetaTags;",
+			"",
 			"    view! {",
 			"        <!DOCTYPE html>",
 			"        <html lang=\"en\">",
@@ -61,6 +99,31 @@
 			"        </html>",
 			"    }",
 			"}"
+		]
+	},
+	"Leptos Router": {
+		"scope": "rust",
+		"prefix": ["Router"],
+		"description": "Create a basic Leptos router.",
+		"body": [
+			"<Router>",
+			"    <main>",
+			"        <Routes fallback=|| \"Page not found.\".into_view()>",
+			"            <Route path=StaticSegment(\"\") view=HomePage/>",
+			"        </Routes>",
+			"    </main>",
+			"</Router>"
+		]
+	},
+	"Leptos use Router": {
+		"scope": "rust",
+		"prefix": ["use Router"],
+		"description": "Add imports for a basic Leptos router.",
+		"body": [
+			"use leptos_router::{",
+			"    components::{Route, Router, Routes},",
+			"    StaticSegment,",
+			"};"
 		]
 	}
 }
