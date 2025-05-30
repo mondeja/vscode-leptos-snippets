@@ -44,9 +44,13 @@ ext install mondeja.leptos-snippets
   <img alt ="#[server] expansion" src="https://raw.githubusercontent.com/mondeja/vscode-leptos-snippets/master/assets/server.gif">
 </p>
 
+### `use leptos::prelude::*;`
+
+Import the Leptos prelude. Expands to `use leptos::prelude::*;`.
+
 ### `shell()`
 
-Generates a basic Leptos `shell` function, expanding to
+Generates a basic Leptos `shell` function. Expands to
 
 ```rust
 pub fn shell(options: LeptosOptions) -> impl IntoView {
