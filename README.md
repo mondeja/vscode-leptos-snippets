@@ -113,9 +113,8 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 
 ### `Router`
 
-Expands to a basic Leptos `Router` setup. It includes only a simple router
-structure, not including the imports. For imports, see [`use Router`](#use-router)
-below.
+Expands to a basic Leptos `Router`. It includes only a simple router structure,
+not including the imports. For imports, see [`use Router`](#use-router) below.
 
 ```rust
 <Router>
@@ -136,6 +135,27 @@ use leptos_router::{
     components::{Route, Router, Routes},
     StaticSegment,
 };
+```
+
+### `SimpleCounter`
+
+Expands to a simple counter Leptos component.
+
+```rust
+/// A simple counter component.
+#[component]
+pub fn SimpleCounter() -> impl IntoView {
+    let (value, set_value) = signal(0);
+
+    view! {
+        <div>
+            <button on:click=move |_| set_value.set(0)>"Clear"</button>
+            <button on:click=move |_| *set_value.write() -= 1>"-1"</button>
+            <span>"Value: " {value}</span>
+            <button on:click=move |_| set_value.update(|value| *value += 1)>"+1"</button>
+        </div>
+    }
+}
 ```
 
 [Leptos]: https://leptos.dev
