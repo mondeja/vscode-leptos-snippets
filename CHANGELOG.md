@@ -2,8 +2,10 @@
 
 ## 2025-05-30 - 0.1.2
 
-- Add `shell()` code snippet.
 - Add `use leptos::prelude::*;` code snippet.
+- Add `App` and `use App` code snippets.
+- Add `shell()` code snippet.
+- Add `Router` and `use Router` code snippets.
 
 ## 2025-05-24 - 0.1.1
 
