@@ -125,5 +125,26 @@
 			"    StaticSegment,",
 			"};"
 		]
+	},
+	"Leptos SimpleCounter": {
+		"scope": "rust",
+		"prefix": ["SimpleCounter"],
+		"description": "Create a simple counter Leptos component.",
+		"body": [
+			"/// A simple counter component.",
+			"#[component]",
+			"pub fn SimpleCounter() -> impl IntoView {",
+			"    let (value, set_value) = signal(0);",
+			"",
+			"    view! {",
+			"        <div>",
+			"            <button on:click=move |_| set_value.set(0)>\"Clear\"</button>",
+			"            <button on:click=move |_| *set_value.write() -= 1>\"-1\"</button>",
+			"            <span>\"Value: \" {value}</span>",
+			"            <button on:click=move |_| set_value.update(|value| *value += 1)>\"+1\"</button>",
+			"        </div>",
+			"    }",
+			"}"
+		]
 	}
 }
