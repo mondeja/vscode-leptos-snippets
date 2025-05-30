@@ -44,4 +44,28 @@ ext install mondeja.leptos-snippets
   <img alt ="#[server] expansion" src="https://raw.githubusercontent.com/mondeja/vscode-leptos-snippets/master/assets/server.gif">
 </p>
 
+### `shell()`
+
+Generates a basic Leptos `shell` function, expanding to
+
+```rust
+pub fn shell(options: LeptosOptions) -> impl IntoView {
+    view! {
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <AutoReload options=options.clone() />
+                <HydrationScripts options/>
+                <MetaTags/>
+            </head>
+            <body>
+                <App/>
+            </body>
+        </html>
+    }
+}
+```
+
 [Leptos]: https://leptos.dev
