@@ -6,6 +6,7 @@
 - Add `App` and `use App` code snippets.
 - Add `shell()` code snippet.
 - Add `Router` and `use Router` code snippets.
+- Add `SimpleCounter` code snippet.
 
 ## 2025-05-24 - 0.1.1
 
