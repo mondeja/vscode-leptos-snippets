@@ -2,7 +2,7 @@
 	"Leptos component": {
 		"scope": "rust",
 		"prefix": ["#[component]"],
-		"description": "Create a Leptos component",
+		"description": "Create a Leptos component.",
 		"body": [
 			"/// ${2:Documentation for [`$1`]}",
 			"#[component]",
@@ -18,7 +18,7 @@
 	"Leptos server function": {
 		"scope": "rust",
 		"prefix": ["#[server]"],
-		"description": "Create a Leptos server function",
+		"description": "Create a Leptos server function.",
 		"body": [
 			"/// ${2:Documentation for [`$1`]}",
 			"#[server]",
@@ -33,10 +33,16 @@
 			"}"
 		]
 	},
+	"Import Leptos prelude": {
+		"scope": "rust",
+		"prefix": ["use leptos::prelude::*;"],
+		"description": "Import Leptos prelude.",
+		"body": ["use leptos::prelude::*;"]
+	},
 	"Leptos shell": {
 		"scope": "rust",
 		"prefix": ["shell()"],
-		"description": "Create a Leptos shell",
+		"description": "Create a Leptos shell.",
 		"body": [
 			"pub fn shell(options: LeptosOptions) -> impl IntoView {",
 			"    view! {",
