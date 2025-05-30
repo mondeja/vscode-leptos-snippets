@@ -1,7 +1,7 @@
 {
 	"name": "leptos-snippets",
 	"displayName": "Leptos Snippets",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Snippets for Leptos, a Rust framework for building web applications.",
 	"categories": [
 		"Snippets"
